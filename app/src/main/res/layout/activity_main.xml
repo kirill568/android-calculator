@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    >
+
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <HorizontalScrollView
+            android:id="@+id/expressionScroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+            <TextView
+                android:id="@+id/expression"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/work_sans_light"
+                android:gravity="end"
+                android:scrollHorizontally="true"
+                android:text=""
+                android:textColor="@color/text_gray"
+                android:textSize="30sp" />
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/resultScroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/work_sans_light"
+                android:gravity="end"
+                android:text="0"
+                android:textSize="60sp" />
+        </HorizontalScrollView>
+
+        <TableLayout
+            android:id="@+id/keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow android:layout_marginBottom="16dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/clear"
+                    android:onClick="onClearClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:layout_marginStart="0dp"
+                    android:background="@drawable/shape_top_button"
+                    android:text="C" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/left_brace"
+                    android:onClick="onOperatorClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_top_button"
+                    android:text="(" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/right_brace"
+                    android:onClick="onOperatorClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape_top_button"
+                    android:text=")" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/divide"
+                    android:onClick="onOperatorClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_right_button"
+                    android:text="\u00F7"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="16dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digit_7"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:layout_marginStart="0dp"
+                    android:background="@drawable/shape_main_button"
+                    android:text="7" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digit_8"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_main_button"
+                    android:text="8" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digit_9"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_main_button"
+                    android:text="9" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/multiple"
+                    android:onClick="onOperatorClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_right_button"
+                    android:text="\u00D7"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="16dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digit_4"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:layout_marginStart="0dp"
+                    android:background="@drawable/shape_main_button"
+                    android:text="4" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digit_5"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_main_button"
+                    android:text="5" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digit_6"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_main_button"
+                    android:text="6" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/minus"
+                    android:onClick="onOperatorClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_right_button"
+                    android:text="-"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="16dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digit_1"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:layout_marginStart="0dp"
+                    android:background="@drawable/shape_main_button"
+                    android:text="1" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digit_2"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_main_button"
+                    android:text="2" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digit_3"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_main_button"
+                    android:text="3" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/plus"
+                    android:onClick="onOperatorClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_right_button"
+                    android:text="+"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/dot"
+                    android:onClick="onOperatorClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:layout_marginStart="0dp"
+                    android:background="@drawable/shape_main_button"
+                    android:text="." />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/digitZero"
+                    android:onClick="onDigitClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_main_button"
+                    android:text="0" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/del"
+                    android:onClick="onDelClick"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_main_button"
+                    android:src="@drawable/ic_delete" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/equal_sign"
+                    android:onClick="calculate"
+                    style="@style/CalculatorButtonStyle"
+                    android:background="@drawable/shape_right_button"
+                    android:text="="
+                    android:textColor="@color/white" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:fitsSystemWindows="true"-->
+<!--    tools:context=".MainActivity">-->
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fitsSystemWindows="true">-->
+
+<!--        <com.google.android.material.appbar.MaterialToolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize" />-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--    <include layout="@layout/content_main" />-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_marginEnd="@dimen/fab_margin"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->
