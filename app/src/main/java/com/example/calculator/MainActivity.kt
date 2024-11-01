@@ -36,10 +36,6 @@ class MainActivity : AppCompatActivity() {
         this.calculator.clear()
         binding.expression.text = ""
         binding.result.text = "0"
-
-        binding.resultScroll.post{
-            binding.resultScroll.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
-        }
     }
 
     fun onOperatorClick(view: View) {

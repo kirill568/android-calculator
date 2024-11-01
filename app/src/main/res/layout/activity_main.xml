@@ -34,21 +34,14 @@
                 android:textSize="30sp" />
         </HorizontalScrollView>
 
-        <HorizontalScrollView
-            android:id="@+id/resultScroll"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end">
-
-            <TextView
-                android:id="@+id/result"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/work_sans_light"
-                android:gravity="end"
-                android:text="0"
-                android:textSize="60sp" />
-        </HorizontalScrollView>
+            android:fontFamily="@font/work_sans_light"
+            android:gravity="end"
+            android:text="0"
+            android:textSize="60sp" />
 
         <TableLayout
             android:id="@+id/keyboard"
